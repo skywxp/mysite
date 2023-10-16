@@ -23,4 +23,14 @@ public class BlogServiceImpl implements BlogService {
     public void addNewBlog(Blogtext blogtext) {
         blogMapper.addNewBlog(blogtext);
     }
+
+    @Override
+    public void deleteBlogById(int blogid) {
+    blogMapper.deleteBlogById(blogid);
+    }
+
+    @Override
+    public void updateBlog(Blogtext blogtext) {
+        blogMapper.upgradeBlog(blogtext);
+    }
 }

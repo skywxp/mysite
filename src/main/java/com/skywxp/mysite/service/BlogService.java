@@ -8,4 +8,8 @@ public interface BlogService {
     List<Blogtext> getAllBlog();
 
     void addNewBlog(Blogtext blogtext);
+
+    void deleteBlogById(int blogid);
+
+    void updateBlog(Blogtext blogtext);
 }

@@ -31,5 +31,15 @@ public class BlogController {
         return R.success("添加成功！");
     }
 
+    @RequestMapping("/deleteBlog")
+    public R<String> deleteBlogById(int blogid){
+        blogService.deleteBlogById(blogid);
+        return R.success("删除成功！");
+    }
 
+    @RequestMapping("/updateBlog")
+    public R<String> updateBlog(Blogtext blogtext){
+        blogService.updateBlog(blogtext);
+        return R.success("更新成功！");
+    }
 }
