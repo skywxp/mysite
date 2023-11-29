@@ -22,6 +22,13 @@ public class LoginController {
     UserMapper userMapper;
     @Autowired
     VerifyService verifyService;
+
+    /**
+     * 用户登陆
+     * @param user
+     * @param session
+     * @return
+     */
     @ResponseBody
     @RequestMapping("/login")
     public R<User> login(User user, HttpSession session){
@@ -36,6 +43,13 @@ public class LoginController {
             return R.error("登录失败！");
         }
     }
+
+    /**
+     * 用户注册
+     * @param user
+     * @param verifyCode
+     * @return
+     */
     @ResponseBody
     @RequestMapping("/register")
     public R<User> register(User user, String verifyCode){
@@ -58,6 +72,17 @@ public class LoginController {
 
     }
 
+    /**
+     * 用户退出登录
+     * @param session
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping("/logout")
+    public R<String> logout(HttpSession session){
+        session.removeAttribute("user");
+        return R.success("退出登录成功！");
+}
 
 
 

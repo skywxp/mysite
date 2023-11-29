@@ -17,6 +17,11 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    /**
+     * 查询用户信息（使用id）
+     * @param userid
+     * @return
+     */
     @RequestMapping("/getUserDetailsById")
     public R<User> getUserDetailsById(@RequestParam("userid") Integer userid){
         log.info("查询用户信息！");

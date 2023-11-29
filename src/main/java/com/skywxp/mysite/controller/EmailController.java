@@ -17,6 +17,11 @@ public class EmailController {
     @Autowired
     VerifyService verifyService;
 
+    /**
+     * 验证码发送服务
+     * @param email
+     * @return
+     */
     @ResponseBody
     @RequestMapping("/sendverifycode")
     public R<String> sendVerifyCode(@RequestParam("email") String email){
